@@ -212,16 +212,16 @@ export type Channel = {
     servers?: string[],
     subscribe?: Operation,
     publish?: Operation,
-    parameters: {
+    parameters?: {
         [param: string]: Parameter | Ref
     },
-    bindings: ChannelBindings | Ref,
+    bindings?: ChannelBindings | Ref,
 
     [xtra: `x-${string}`]: any
 }
 
 export type Operation = {
-    operationId: string,
+    operationId?: string,
     summary?: string,
     description?: CommonMark,
     security?: SecurityRequirement[],
@@ -247,7 +247,7 @@ export type OperationTrait = {
 }
 
 export type Message = {
-    messageId: string,
+    messageId?: string,
     headers?: Schema | Ref,
     payload?: Schema | any,
     correlationId?: CorrelationId | Ref,
